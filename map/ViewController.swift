@@ -28,14 +28,18 @@ class ViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        let sourceLocation = CLLocationCoordinate2D(latitude:39.173209 , longitude: -94.593933)
-        let destinationLocation = CLLocationCoordinate2D(latitude:38.643172 , longitude: -90.177429)
+        let sourceLocation = CLLocationCoordinate2D(latitude:35.681464, longitude: 139.767052)
+        let destinationLocation = CLLocationCoordinate2D(latitude:34.702741, longitude: 135.495929)
 
-        let sourcePin = customPin(pinTitle: "Kansas City", pinSubTitle: "", location: sourceLocation)
-        let destinationPin = customPin(pinTitle: "St. Louis", pinSubTitle: "", location: destinationLocation)
+
+        // add annotation
+        let sourcePin = customPin(pinTitle: "Tokyo Station", pinSubTitle: "", location: sourceLocation)
+        let destinationPin = customPin(pinTitle: "Osaka Station", pinSubTitle: "", location: destinationLocation)
         self.mapView.addAnnotation(sourcePin)
         self.mapView.addAnnotation(destinationPin)
 
+
+        
         let sourcePlaceMark = MKPlacemark(coordinate: sourceLocation)
         let destinationPlaceMark = MKPlacemark(coordinate: destinationLocation)
 
